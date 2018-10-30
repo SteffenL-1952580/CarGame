@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class Car : MonoBehaviour
 {
@@ -10,8 +11,10 @@ public class Car : MonoBehaviour
     public WheelCollider rearDriverW, rearPassengerW;
     public Transform frontDriverT, frontPassengerT;
     public Transform rearDriverT, rearPassengerT;
-    public float maxSteerAngle = 30;
+    public float maxSteerAngle = 15;
     public float motorForce = 50;
+    public CircularDrive steeringWheel;
+    public float steeringSensitivity = 2f;
 
     private float horizontalInput;
     private float verticalInput;
@@ -25,7 +28,8 @@ public class Car : MonoBehaviour
 
     private void Steer()
     {
-        steeringAngle = maxSteerAngle * horizontalInput;
+        //steeringAngle = maxSteerAngle * horizontalInput;
+        steeringAngle = steeringWheel.outAngle / steeringSensitivity;
         frontDriverW.steerAngle = steeringAngle;
         frontPassengerW.steerAngle = steeringAngle;
     }
