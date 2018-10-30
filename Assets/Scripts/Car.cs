@@ -6,12 +6,10 @@ using Valve.VR.InteractionSystem;
 
 public class Car : MonoBehaviour
 {
-
     public WheelCollider frontDriverW, frontPassengerW;
     public WheelCollider rearDriverW, rearPassengerW;
     public Transform frontDriverT, frontPassengerT;
     public Transform rearDriverT, rearPassengerT;
-    public float maxSteerAngle = 15;
     public float motorForce = 50;
     public CircularDrive steeringWheel;
     public float steeringSensitivity = 2f;
@@ -32,6 +30,8 @@ public class Car : MonoBehaviour
         steeringAngle = steeringWheel.outAngle / steeringSensitivity;
         frontDriverW.steerAngle = steeringAngle;
         frontPassengerW.steerAngle = steeringAngle;
+
+        Debug.Log(steeringWheel.outAngle);
     }
 
     private void Accelerate()
