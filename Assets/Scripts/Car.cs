@@ -13,6 +13,10 @@ public class Car : MonoBehaviour
     public float motorForce = 50;
     public CircularDrive steeringWheel;
     public float steeringSensitivity = 2f;
+   
+    public CircularDrive lever;
+    public bool driveForward = false;
+    public bool driveBackward = false;
 
     private float horizontalInput;
     private float verticalInput;
@@ -59,12 +63,42 @@ public class Car : MonoBehaviour
         _transform.rotation = _quat;
     }
 
+    private void AcceleratePedalPress()
+    {
+        if(driveForward && !driveBackward)
+        {
+            //frontDriverW.motorTorque = verticalInput * motorForce * 10;
+            //frontPassengerW.motorTorque = verticalInput * motorForce * 10;
+            
+            //code to accelerate on pedal press. modify the code above to work similar but on pedal press.
+        }
+    }
+
+    private void UpdateDriveStatus()
+    {
+        float leverAngle = lever.outAngle;
+        if (leverAngle >= 10)
+        {
+            driveForward = true;
+            driveBackward = false;
+        } else if (10 > leverAngle && leverAngle > -10)
+        {
+            driveForward = false;
+            driveBackward = false;
+        }
+        else
+        {
+            driveForward = false;
+            driveBackward = true;
+        }
+    }
+
     private void FixedUpdate()
     {
         GetInput();
         Steer();
         Accelerate();
         UpdateWheelPoses();
+        UpdateDriveStatus();
     }
-
 }
