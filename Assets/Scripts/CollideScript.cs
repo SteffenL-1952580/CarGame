@@ -8,7 +8,7 @@ public class CollideScript : MonoBehaviour {
 
     public Text collideText;
 
-   
+    public ParticleSystem smoke;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +26,11 @@ public class CollideScript : MonoBehaviour {
 
         //Show on dashboard
         SetCollideText();
+
+        //Show Smoke
+        smoke.Play();
+
+        //reload scene
         Invoke("Reload", 5.0f);
            
        
