@@ -23,16 +23,19 @@ public class CollideScript : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+        
+        if (collision.gameObject.name == "TestCarObject" || collision.gameObject.tag=="Obstacle")
+        {
+            //Show on dashboard
+            SetCollideText();
 
-        //Show on dashboard
-        SetCollideText();
+            //Show Smoke
+            smoke.Play();
 
-        //Show Smoke
-        smoke.Play();
+            //reload scene
 
-        //reload scene
-        Invoke("Reload", 5.0f);
-           
+            Invoke("Reload", 5.0f);
+        }   
        
     }
 
