@@ -12,7 +12,7 @@ public class Car : MonoBehaviour
     public Transform rearDriverT, rearPassengerT;
     public float motorForce = 50;
     public CircularDrive steeringWheel;
-    public float steeringSensitivity = 2f;
+    public float steeringSensitivity = 10f;
    
     public CircularDrive lever;
 
@@ -29,7 +29,7 @@ public class Car : MonoBehaviour
     private void Steer()
     {
         //steeringAngle = maxSteerAngle * horizontalInput;
-        steeringAngle = steeringWheel.outAngle / steeringSensitivity;
+        steeringAngle = -steeringWheel.outAngle / steeringSensitivity;
         frontDriverW.steerAngle = steeringAngle;
         frontPassengerW.steerAngle = steeringAngle;
 
