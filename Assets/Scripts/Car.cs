@@ -20,11 +20,11 @@ public class Car : MonoBehaviour
     private float verticalInput;
     private float steeringAngle;
 
-    //private void GetInput()
-    //{
-    //    horizontalInput = Input.GetAxis("Horizontal");
-    //    verticalInput = Input.GetAxis("Vertical");
-    //}
+    private void GetInput()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+    }
 
     private void Steer()
     {
@@ -36,11 +36,11 @@ public class Car : MonoBehaviour
         Debug.Log(steeringWheel.outAngle);
     }
 
-    //private void Accelerate()
-    //{
-    //    frontDriverW.motorTorque = verticalInput * motorForce * 10;
-    //    frontPassengerW.motorTorque = verticalInput * motorForce * 10;
-    //}
+    private void Accelerate()
+    {
+        frontDriverW.motorTorque = verticalInput * motorForce * 10;
+        frontPassengerW.motorTorque = verticalInput * motorForce * 10;
+    }
 
     private void UpdateWheelPoses()
     {
@@ -61,15 +61,15 @@ public class Car : MonoBehaviour
         _transform.rotation = _quat;
     }
 
-    private void Accelerate()
-    {
-        frontDriverW.motorTorque = lever.outAngle * motorForce * 10;
-        frontPassengerW.motorTorque = lever.outAngle * motorForce * 10;
-    }
+    //private void Accelerate()
+    //{
+    //    frontDriverW.motorTorque = lever.outAngle * motorForce * 10;
+    //    frontPassengerW.motorTorque = lever.outAngle * motorForce * 10;
+    //}
 
     private void FixedUpdate()
     {
-        //GetInput();
+        GetInput();
         Steer();
         Accelerate();
         UpdateWheelPoses();
