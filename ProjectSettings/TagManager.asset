@@ -11,8 +11,8 @@ TagManager:
   - Brakes
   - Obstacle
   - Sensor
-
-
+  - Checkpoint
+  - CheckpointMaster
   layers:
   - Default
   - TransparentFX
