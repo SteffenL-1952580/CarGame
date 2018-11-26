@@ -35,8 +35,14 @@ public class CollideScript : MonoBehaviour {
             //reload scene
 
             Invoke("Reload", 5.0f);
-        }   
-       
+        }
+
+
+        if (collision.gameObject.tag == "Sensor")
+        {
+            collideText.text = "Red light passed";
+        }
+
     }
 
     void Reload()

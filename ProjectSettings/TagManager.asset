@@ -9,6 +9,8 @@ TagManager:
   - CarBody
   - Wheels
   - Brakes
+  - Obstacle
+  - Sensor
   layers:
   - Default
   - TransparentFX
