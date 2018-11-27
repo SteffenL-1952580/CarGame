@@ -29,7 +29,7 @@ public class Car : MonoBehaviour
     private void Steer()
     {
         //steeringAngle = maxSteerAngle * horizontalInput;
-        steeringAngle = -steeringWheel.outAngle / steeringSensitivity;
+        steeringAngle = steeringWheel.outAngle / steeringSensitivity;
         frontDriverW.steerAngle = steeringAngle;
         frontPassengerW.steerAngle = steeringAngle;
 
