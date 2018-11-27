@@ -7938,14 +7938,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  minAngle: -30
+  minAngle: -40
   freezeOnMin: 0
   onMinAngle:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  maxAngle: 30
+  maxAngle: 40
   freezeOnMax: 0
   onMaxAngle:
     m_PersistentCalls:
