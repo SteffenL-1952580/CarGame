@@ -290,11 +290,13 @@ namespace Valve.VR.InteractionSystem
 		{
 			Vector3 toTransform = ( xForm.position - transform.position ).normalized;
 			Vector3 toTransformProjected = new Vector3( 0.0f, 0.0f, 0.0f );
+		    Quaternion carRotation = GameObject.Find("Car").transform.rotation;
+		    Vector3 rotatedWorldPlaneNormal = carRotation * worldPlaneNormal;
 
 			// Need a non-zero distance from the hand to the center of the CircularDrive
 			if ( toTransform.sqrMagnitude > 0.0f )
 			{
-				toTransformProjected = Vector3.ProjectOnPlane( toTransform, worldPlaneNormal ).normalized;
+				toTransformProjected = Vector3.ProjectOnPlane( toTransform, rotatedWorldPlaneNormal).normalized;
 			}
 			else
 			{
@@ -479,8 +481,10 @@ namespace Valve.VR.InteractionSystem
 					}
 					else
 					{
-						Vector3 cross = Vector3.Cross( lastHandProjected, toHandProjected ).normalized;
-						float dot = Vector3.Dot( worldPlaneNormal, cross );
+					    Quaternion carRotation = GameObject.Find("Car").transform.rotation;
+					    Vector3 rotatedWorldPlaneNormal = carRotation * worldPlaneNormal;
+                        Vector3 cross = Vector3.Cross( lastHandProjected, toHandProjected ).normalized;
+						float dot = Vector3.Dot( rotatedWorldPlaneNormal, cross );
 
 						float signedAngleDelta = absAngleDelta;
 
