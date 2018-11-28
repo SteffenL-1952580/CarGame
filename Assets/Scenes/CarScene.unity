@@ -16505,6 +16505,11 @@ Prefab:
       propertyPath: far clip plane
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 114527795040618154, guid: 077b022d094367d4481fb54e8dce79bb,
+        type: 2}
+      propertyPath: noSteamVRFallbackCamera
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 077b022d094367d4481fb54e8dce79bb, type: 2}
   m_IsPrefabAsset: 0
