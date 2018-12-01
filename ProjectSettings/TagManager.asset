@@ -13,6 +13,7 @@ TagManager:
   - Sensor
   - Checkpoint
   - CheckpointMaster
+  - repair
   layers:
   - Default
   - TransparentFX
