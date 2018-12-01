@@ -16,6 +16,8 @@ public class Car : MonoBehaviour
    
     public CircularDrive lever;
 
+    public bool canControl = false;
+
     private float horizontalInput;
     private float verticalInput;
     private float steeringAngle;
@@ -72,9 +74,12 @@ public class Car : MonoBehaviour
 
     private void FixedUpdate()
     {
-        GetInput();
-        Steer();
-        Accelerate();
-        UpdateWheelPoses();
+        if (canControl)
+        {
+            GetInput();
+            Steer();
+            Accelerate();
+            UpdateWheelPoses();
+        }
     }
 }
