@@ -26,16 +26,13 @@ public class CountDownScript : MonoBehaviour {
     
     private int currentRound;
     private int maxRound = 3;
-
- 
-
-
+     
     private int hours;
     private int minutes;
     private int seconds;
     private int milliseconds;
 
-    private bool test = false;
+    private bool isExecuted = false;
 
     // Use this for initialization
     void Start () {
@@ -53,13 +50,13 @@ public class CountDownScript : MonoBehaviour {
 
         timeLeft -= Time.deltaTime;
       
-        if (timeLeft < 0 && test == false)
+        if (timeLeft < 0 && isExecuted == false)
         {
             countDownText.fontStyle = FontStyle.Bold;
             countDownText.text = "Go!";
             carScript.canControl = true;
 
-            test = true;
+            isExecuted = true;
             stopwatch.Start();
             roundwatch.Start();
 
@@ -76,7 +73,7 @@ public class CountDownScript : MonoBehaviour {
         {
             currentRound++;
             TimeSpan ts = roundwatch.Elapsed;
-
+            TimeSpan tsStopWatch = stopwatch.Elapsed;
             hours = ts.Hours;
             minutes = ts.Minutes;
             seconds = ts.Seconds;
@@ -89,6 +86,17 @@ public class CountDownScript : MonoBehaviour {
             {
                 stopwatch.Stop();
                 roundwatch.Stop();
+                carScript.canControl = false;
+                countDownText.enabled = true;
+
+                TimeSpan ts2 = stopwatch.Elapsed;
+                hours = tsStopWatch.Hours;
+                minutes = tsStopWatch.Minutes;
+                seconds = tsStopWatch.Seconds;
+                milliseconds = tsStopWatch.Milliseconds;
+
+                countDownText.text = string.Format("Your time: {0:00}:{1:00}:{2:00}.{3:00}", hours, minutes, seconds, milliseconds);
+
             }
             else
             {
@@ -101,14 +109,12 @@ public class CountDownScript : MonoBehaviour {
         {
             TimeSpan ts = stopwatch.Elapsed;
             timerText.text = ts.ToString();
+
+          
         }
-
-
-
-
+        
     }
-
-
+    
     private void DisableCountDownText()
     {
         countDownText.enabled = false;
