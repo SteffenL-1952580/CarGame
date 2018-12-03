@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Diagnostics;
 
+
 public class Checkpoint : MonoBehaviour
 {
     private CheckpointMaster cpm;
 
     private GameObject car;
     private CountDownScript script;
-
 
     void Start()
     {
@@ -28,10 +28,14 @@ public class Checkpoint : MonoBehaviour
 
         cpm.nextCheckpoint = cpm.checkpoints[0];
         cpm.nextCheckpoint.GetComponent<Renderer>().material.color = Color.green;
+
+        
     }
+
 
     private void Update()
     {
+        
         //code needs to execute after entering last checkpoint && reset timer after second round
         if (Input.GetKeyDown("space"))
         {
@@ -60,7 +64,6 @@ public class Checkpoint : MonoBehaviour
                     cpm.currentCheckpoint += 1;
                     cpm.nextCheckpoint = cpm.checkpoints[cpm.currentCheckpoint];
                 }
-
                 cpm.nextCheckpoint.GetComponent<Renderer>().material.color = Color.green;
             }
 
