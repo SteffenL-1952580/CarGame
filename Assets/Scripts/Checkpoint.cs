@@ -10,6 +10,7 @@ public class Checkpoint : MonoBehaviour
 
     private GameObject car;
     private CountDownScript script;
+    private Color green = new Color(0, 1, 0, 0.15f);
 
     void Start()
     {
@@ -27,7 +28,7 @@ public class Checkpoint : MonoBehaviour
         }
 
         cpm.nextCheckpoint = cpm.checkpoints[0];
-        cpm.nextCheckpoint.GetComponent<Renderer>().material.color = Color.green;
+        cpm.nextCheckpoint.GetComponent<Renderer>().material.color = green;
 
         
     }
@@ -64,7 +65,7 @@ public class Checkpoint : MonoBehaviour
                     cpm.currentCheckpoint += 1;
                     cpm.nextCheckpoint = cpm.checkpoints[cpm.currentCheckpoint];
                 }
-                cpm.nextCheckpoint.GetComponent<Renderer>().material.color = Color.green;
+                cpm.nextCheckpoint.GetComponent<Renderer>().material.color = green;
             }
 
         }

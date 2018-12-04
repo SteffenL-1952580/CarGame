@@ -15,7 +15,7 @@ public class CollideScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        collideText.text = "";
         if (smoke.isPlaying)
         {
             collideText.text = "smoke playing";
@@ -30,7 +30,7 @@ public class CollideScript : MonoBehaviour
     {
 
 
-        if (collision.gameObject.name == "TestCarObject" || collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
             if (!smoke.isPlaying)
             {
@@ -45,7 +45,7 @@ public class CollideScript : MonoBehaviour
             if (crashCount == OptionsMenu.accidentCount)
             {
                 //Show on dashboard
-               // SetCollideText();
+                SetCollideText();
 
                 //reload scene
                 Invoke("Reload", 5.0f);
