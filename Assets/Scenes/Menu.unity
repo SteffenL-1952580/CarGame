@@ -1002,7 +1002,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ROUND COUNT
+  m_Text: 'ROUND COUNT (default 3)
+
+'
 --- !u!222 &797194219
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2284,7 +2286,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ACCIDENT COUNT
+  m_Text: 'ACCIDENT COUNT (default 2)
+
+'
 --- !u!222 &2146714576
 CanvasRenderer:
   m_ObjectHideFlags: 0
