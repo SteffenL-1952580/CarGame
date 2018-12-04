@@ -13,7 +13,7 @@ public class Car : MonoBehaviour
     public float motorForce = 50;
     public CircularDrive steeringWheel;
     public float steeringSensitivity = 10f;
-   
+
     public CircularDrive lever;
 
     public bool canControl = false;
@@ -74,7 +74,7 @@ public class Car : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canControl)
+        //if (canControl)
         {
             //GetInput();
             Steer();

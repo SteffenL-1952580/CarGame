@@ -43,7 +43,7 @@ public class CollideScript : MonoBehaviour
             if (crashCount == 2)
             {
                 //Show on dashboard
-                SetCollideText();
+               // SetCollideText();
 
                 //reload scene
                 Invoke("Reload", 5.0f);
