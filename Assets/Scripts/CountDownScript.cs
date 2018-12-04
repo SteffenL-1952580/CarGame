@@ -25,7 +25,7 @@ public class CountDownScript : MonoBehaviour {
     private GameObject checkpoint;
     
     private int currentRound;
-    private int maxRound = 3;
+    //private int maxRound = 3;
      
     private int hours;
     private int minutes;
@@ -82,7 +82,7 @@ public class CountDownScript : MonoBehaviour {
 
             currentLapText.text = string.Format("Lap {0}: {1:00}:{2:00}:{3:00}.{4:00}", currentRound, hours, minutes, seconds, milliseconds);
 
-            if (currentRound >= maxRound)
+            if (currentRound >= OptionsMenu.roundCount)
             {
                 stopwatch.Stop();
                 roundwatch.Stop();

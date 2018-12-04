@@ -40,7 +40,9 @@ public class CollideScript : MonoBehaviour
             
             crashCount++;
 
-            if (crashCount == 2)
+            // gets value of global variable accidentCount
+            // default 2
+            if (crashCount == OptionsMenu.accidentCount)
             {
                 //Show on dashboard
                // SetCollideText();
