@@ -18,6 +18,9 @@ public class Car : MonoBehaviour
 
     public bool canControl = false;
 
+    public bool isBoosting = false;
+
+
     private float horizontalInput;
     private float verticalInput;
     private float steeringAngle;
@@ -65,10 +68,20 @@ public class Car : MonoBehaviour
 
     private void Accelerate()
     {
+
+
         if (10 > lever.outAngle && lever.outAngle > -10)
         {
-            frontDriverW.motorTorque = lever.outAngle * motorForce * 10;
-            frontPassengerW.motorTorque = lever.outAngle * motorForce * 10;
+            if (isBoosting == false)
+            {
+                frontDriverW.motorTorque = lever.outAngle * motorForce * 10;
+                frontPassengerW.motorTorque = lever.outAngle * motorForce * 10;
+            }else
+            {
+                frontDriverW.motorTorque = (lever.outAngle * motorForce * 10) * 1.5f;
+                frontPassengerW.motorTorque = (lever.outAngle * motorForce * 10) * 1.5f;
+            }
+            
         }
     }
 
