@@ -5014,6 +5014,48 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0656a7e5759ccaf40a463b72bbf3a345, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1001 &589808690
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4062965774029502, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062965774029502, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062965774029502, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 16.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062965774029502, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062965774029502, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062965774029502, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062965774029502, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062965774029502, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &601332405
 GameObject:
   m_ObjectHideFlags: 0
@@ -15448,6 +15490,7 @@ MonoBehaviour:
   steeringSensitivity: 10
   lever: {fileID: 1253309732}
   canControl: 0
+  isBoosting: 0
 --- !u!65 &1798810702
 BoxCollider:
   m_ObjectHideFlags: 0

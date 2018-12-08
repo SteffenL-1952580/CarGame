@@ -21,6 +21,12 @@ public class BoostScript : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
+        Invoke("DisableBoosting", 3f);
+    }
+
+
+    private void DisableBoosting()
+    {
         carScript.isBoosting = false;
     }
 }
