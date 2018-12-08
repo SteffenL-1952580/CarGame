@@ -5051,7 +5051,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4062965774029502, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 65220801468241900, guid: 044745fa401571f4491eacdd77231a7f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 43.774456
+      objectReference: {fileID: 0}
+    - target: {fileID: 65220801468241900, guid: 044745fa401571f4491eacdd77231a7f,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 21.387228
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 044745fa401571f4491eacdd77231a7f, type: 2}
@@ -15491,6 +15501,7 @@ MonoBehaviour:
   lever: {fileID: 1253309732}
   canControl: 0
   isBoosting: 0
+  boostPower: 1.5
 --- !u!65 &1798810702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16495,6 +16506,11 @@ Prefab:
         type: 2}
       propertyPath: limited
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114044271194726716, guid: e70d42da3ff725d4bad53859560f6fb7,
+        type: 2}
+      propertyPath: boostPower
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e70d42da3ff725d4bad53859560f6fb7, type: 2}

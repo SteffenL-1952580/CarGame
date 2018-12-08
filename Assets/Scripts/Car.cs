@@ -19,7 +19,7 @@ public class Car : MonoBehaviour
     public bool canControl = false;
 
     public bool isBoosting = false;
-
+    public float boostPower = 1.5f;
 
     private float horizontalInput;
     private float verticalInput;
@@ -78,8 +78,8 @@ public class Car : MonoBehaviour
                 frontPassengerW.motorTorque = lever.outAngle * motorForce * 10;
             }else
             {
-                frontDriverW.motorTorque = (lever.outAngle * motorForce * 10) * 1.5f;
-                frontPassengerW.motorTorque = (lever.outAngle * motorForce * 10) * 1.5f;
+                frontDriverW.motorTorque = (lever.outAngle * motorForce * 10) * boostPower;
+                frontPassengerW.motorTorque = (lever.outAngle * motorForce * 10) * boostPower;
             }
             
         }
