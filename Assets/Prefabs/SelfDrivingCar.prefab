@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4142342226653348}
   - component: {fileID: 33884740889571054}
   - component: {fileID: 23115261559958378}
+  - component: {fileID: 114324533349673104}
   m_Layer: 0
   m_Name: WheelFrontLeft_LOD0
   m_TagString: Wheels
@@ -406,6 +407,7 @@ GameObject:
   - component: {fileID: 4617629374683694}
   - component: {fileID: 33531190901230374}
   - component: {fileID: 23535669281458020}
+  - component: {fileID: 114444376591422494}
   m_Layer: 0
   m_Name: WheelRearLeft_LOD0
   m_TagString: Wheels
@@ -626,6 +628,7 @@ GameObject:
   - component: {fileID: 4973266629420630}
   - component: {fileID: 33155358175751104}
   - component: {fileID: 23721517336468434}
+  - component: {fileID: 114351212979739008}
   m_Layer: 0
   m_Name: WheelRearRight_LOD0
   m_TagString: Wheels
@@ -1195,6 +1198,7 @@ GameObject:
   - component: {fileID: 4996821405954476}
   - component: {fileID: 33315854172638284}
   - component: {fileID: 23981146069924716}
+  - component: {fileID: 114216518530102944}
   m_Layer: 0
   m_Name: WheelFrontRight_LOD0
   m_TagString: Wheels
@@ -1364,7 +1368,7 @@ GameObject:
   - component: {fileID: 114628156586630328}
   m_Layer: 0
   m_Name: SelfDrivingCar
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4122,6 +4126,42 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114216518530102944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906829599265222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395290a106852144487b4ea171475a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetWheel: {fileID: 146061045807835668}
+--- !u!114 &114324533349673104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025205500405596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395290a106852144487b4ea171475a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetWheel: {fileID: 146596378021419942}
+--- !u!114 &114351212979739008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475691044462044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395290a106852144487b4ea171475a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetWheel: {fileID: 146648798016726866}
 --- !u!114 &114360317630716332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4145,6 +4185,18 @@ MonoBehaviour:
   handFollowTransformRotation: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!114 &114444376591422494
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341949438408070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395290a106852144487b4ea171475a1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetWheel: {fileID: 146877638794114674}
 --- !u!114 &114628156586630328
 MonoBehaviour:
   m_ObjectHideFlags: 1
