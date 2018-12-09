@@ -29,8 +29,6 @@ public class Checkpoint : MonoBehaviour
 
         cpm.nextCheckpoint = cpm.checkpoints[0];
         cpm.nextCheckpoint.GetComponent<Renderer>().material.color = green;
-
-        
     }
 
 
@@ -57,7 +55,7 @@ public class Checkpoint : MonoBehaviour
                     cpm.currentCheckpoint = 0;
                     cpm.nextCheckpoint = cpm.checkpoints[0];
 
-                   // script.PassedLastCheckPoint = true;
+                    script.PassedLastCheckPoint = true;
                  
                 }
                 else
