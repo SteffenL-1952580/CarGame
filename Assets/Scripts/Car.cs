@@ -13,11 +13,8 @@ public class Car : MonoBehaviour
     public float motorForce = 50;
     public CircularDrive steeringWheel;
     public float steeringSensitivity = 10f;
-
     public CircularDrive lever;
-
     public bool canControl = false;
-
     public bool isBoosting = false;
     public float boostPower = 1.5f;
 
@@ -69,15 +66,17 @@ public class Car : MonoBehaviour
     private void Accelerate()
     {
 
-
+      
         if (10 > lever.outAngle && lever.outAngle > -10)
         {
             if (isBoosting == false)
             {
+                
                 frontDriverW.motorTorque = lever.outAngle * motorForce * 10;
                 frontPassengerW.motorTorque = lever.outAngle * motorForce * 10;
             }else
             {
+                Debug.Log("boosting");
                 frontDriverW.motorTorque = (lever.outAngle * motorForce * 10) * boostPower;
                 frontPassengerW.motorTorque = (lever.outAngle * motorForce * 10) * boostPower;
             }

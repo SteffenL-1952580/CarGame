@@ -33,7 +33,7 @@ public class TrafficLightScript : MonoBehaviour {
         isBusy = true;
 
         SetGreen();
-        yield return new WaitForSeconds(10F);
+        yield return new WaitForSeconds(2F);
 
         SetOrange();
         yield return new WaitForSeconds(3f);      

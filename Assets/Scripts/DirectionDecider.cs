@@ -33,7 +33,7 @@ public class DirectionDecider : MonoBehaviour
             {
                 if (currentPos <= previousPos + 1)
                 {
-                    Debug.Log("Right way! Pos:" + currentPos + " Prev pos:" + (previousPos));
+                    //Debug.Log("Right way! Pos:" + currentPos + " Prev pos:" + (previousPos));
                 }
                 else
                 {
