@@ -28,8 +28,6 @@ public class CollideScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-
-
         if (collision.gameObject.tag == "Obstacle")
         {
             if (!smoke.isPlaying)
