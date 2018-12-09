@@ -31,17 +31,6 @@ public class Checkpoint : MonoBehaviour
         cpm.nextCheckpoint.GetComponent<Renderer>().material.color = green;
     }
 
-
-    private void Update()
-    {
-        
-        //code needs to execute after entering last checkpoint && reset timer after second round
-        if (Input.GetKeyDown("space"))
-        {
-            script.PassedLastCheckPoint = true;
-        }   
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
