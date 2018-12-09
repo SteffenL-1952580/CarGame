@@ -1,29 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class BoostScript : MonoBehaviour {
 
     private GameObject car;
     private Car carScript;
-	// Use this for initialization
-	void Start () {
+    public Text boostText;
+    // Use this for initialization
+    void Start () {
 
-        car = GameObject.Find("Car");
+        car = GameObject.FindGameObjectWithTag("Player");
         carScript = car.GetComponent<Car>();
+        boostText.text = "";
+        boostText.enabled = true;
     }
 	
 
     private void OnTriggerEnter(Collider other)
     {
-        
-        carScript.isBoosting = true;
-        
+        if (other.tag == "Player")
+        {
+            carScript.isBoosting = true;
+            boostText.text = "BOOSTING ENABLED";
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-
         Invoke("DisableBoosting", 3f);
     }
 
@@ -31,5 +37,6 @@ public class BoostScript : MonoBehaviour {
     private void DisableBoosting()
     {
         carScript.isBoosting = false;
+        boostText.text = "";
     }
 }

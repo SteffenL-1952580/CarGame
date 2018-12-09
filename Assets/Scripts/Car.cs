@@ -16,11 +16,12 @@ public class Car : MonoBehaviour
     public CircularDrive lever;
     public bool canControl = false;
     public bool isBoosting = false;
-    public float boostPower = 1.5f;
+    public float boostPower = 3f;
 
     private float horizontalInput;
     private float verticalInput;
     private float steeringAngle;
+
 
     //private void GetInput()
     //{

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class CheckpointMaster : MonoBehaviour
     public GameObject[] checkpoints;
     public int currentCheckpoint = 0;
     public GameObject nextCheckpoint;
+    public String directionToCheck;
 
     void Awake()
     {
@@ -17,6 +19,7 @@ public class CheckpointMaster : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(instance);
+            directionToCheck = "straight";
         }
         else
         {
