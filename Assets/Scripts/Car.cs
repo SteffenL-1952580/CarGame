@@ -16,7 +16,7 @@ public class Car : MonoBehaviour
     public CircularDrive lever;
     public bool canControl = false;
     public bool isBoosting = false;
-    public float boostPower = 3f;
+    public float boostPower = 5f;
 
     private float horizontalInput;
     private float verticalInput;
@@ -68,20 +68,35 @@ public class Car : MonoBehaviour
     {
 
       
-        if (10 > lever.outAngle && lever.outAngle > -10)
+        if (10 < lever.outAngle || lever.outAngle < -10)
         {
             if (isBoosting == false)
             {
-                
-                frontDriverW.motorTorque = lever.outAngle * motorForce * 10;
-                frontPassengerW.motorTorque = lever.outAngle * motorForce * 10;
+                if(lever.outAngle < -10) {
+                    frontDriverW.brakeTorque = 500;
+                    frontPassengerW.brakeTorque = 500;
+                }
+                else
+                {
+                    frontDriverW.brakeTorque = 0;
+                    frontPassengerW.brakeTorque = 0;
+                }
+
+
+                //Debug.Log(motorForce);
+                frontDriverW.motorTorque = lever.outAngle * motorForce * 3;
+                frontPassengerW.motorTorque = lever.outAngle * motorForce * 3;
             }else
             {
                 Debug.Log("boosting");
-                frontDriverW.motorTorque = (lever.outAngle * motorForce * 10) * boostPower;
-                frontPassengerW.motorTorque = (lever.outAngle * motorForce * 10) * boostPower;
+                frontDriverW.motorTorque = (lever.outAngle * motorForce * 3) * boostPower;
+                frontPassengerW.motorTorque = (lever.outAngle * motorForce * 3) * boostPower;
             }
-            
+        }
+        else
+        {
+            frontDriverW.motorTorque = 0;
+            frontPassengerW.motorTorque = 0;
         }
     }
 
