@@ -51,11 +51,7 @@ public class CollideScript : MonoBehaviour
             }
 
         }
-        
-        if (collision.gameObject.tag == "Sensor")
-        {
-            collideText.text = "Red light passed";
-        }
+     
 
     }
 

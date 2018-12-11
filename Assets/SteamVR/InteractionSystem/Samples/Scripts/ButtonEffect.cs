@@ -9,15 +9,27 @@ namespace Valve.VR.InteractionSystem.Sample
 {
     public class ButtonEffect : MonoBehaviour
     {
-        public void OnButtonDown(Hand fromHand)
+        private GameObject car;
+        private Car script;
+
+        private void Start()
         {
-            ColorSelf(Color.cyan);
-            fromHand.TriggerHapticPulse(1000);
+            ColorSelf(Color.gray);
+            car = GameObject.Find("Car");
+            script = car.GetComponent<Car>();
         }
 
-        public void OnButtonUp(Hand fromHand)
+        public void OnButtonDown(Hand fromHand)
         {
-            ColorSelf(Color.white);
+            script.reverseDrivingEnabled = !script.reverseDrivingEnabled;
+            if (script.reverseDrivingEnabled)
+            {
+                ColorSelf(Color.red);
+            }
+            else
+            {
+                ColorSelf(Color.gray);
+            }          
         }
 
         private void ColorSelf(Color newColor)

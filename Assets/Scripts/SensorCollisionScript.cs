@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SensorCollisionScript : MonoBehaviour {
 
@@ -24,9 +25,17 @@ public class SensorCollisionScript : MonoBehaviour {
         if(RedLight.GetComponent<Renderer>().material.color == Color.red)
         {
             collideText.text = "Stop for a Red Light!";
+
+            Invoke("ResetLevel", 5f);
         }
      
     }
+    void ResetLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 
   
 

@@ -10,17 +10,20 @@ public class Car : MonoBehaviour
     public WheelCollider rearDriverW, rearPassengerW;
     public Transform frontDriverT, frontPassengerT;
     public Transform rearDriverT, rearPassengerT;
-    public float motorForce = 50;
+    public float motorForce = 50f;
+    public float motorMultiplier = 3f;
     public CircularDrive steeringWheel;
     public float steeringSensitivity = 10f;
     public CircularDrive lever;
     public bool canControl = false;
     public bool isBoosting = false;
-    public float boostPower = 5f;
+    public float boostPower = 2f;
 
     private float horizontalInput;
     private float verticalInput;
     private float steeringAngle;
+
+    public Boolean reverseDrivingEnabled = false;
 
 
     //private void GetInput()
@@ -66,15 +69,17 @@ public class Car : MonoBehaviour
 
     private void Accelerate()
     {
+        
 
-      
+
         if (10 < lever.outAngle || lever.outAngle < -10)
         {
             if (isBoosting == false)
             {
                 if(lever.outAngle < -10) {
-                    frontDriverW.brakeTorque = 500;
-                    frontPassengerW.brakeTorque = 500;
+                    Debug.Log(frontDriverW.brakeTorque);
+                    frontDriverW.brakeTorque = 1000;
+                    frontPassengerW.brakeTorque = 1000;
                 }
                 else
                 {
@@ -82,15 +87,24 @@ public class Car : MonoBehaviour
                     frontPassengerW.brakeTorque = 0;
                 }
 
-
-                //Debug.Log(motorForce);
-                frontDriverW.motorTorque = lever.outAngle * motorForce * 3;
-                frontPassengerW.motorTorque = lever.outAngle * motorForce * 3;
-            }else
+                if (!reverseDrivingEnabled)
+                {
+                    frontDriverW.motorTorque = lever.outAngle * motorForce * motorMultiplier;
+                    frontPassengerW.motorTorque = lever.outAngle * motorForce * motorMultiplier;
+                }
+                else
+                {
+                    frontDriverW.motorTorque = (lever.outAngle * -1) * motorForce * motorMultiplier;
+                    frontPassengerW.motorTorque = (lever.outAngle * -1) * motorForce * motorMultiplier;
+                }
+                
+            }
+            else
             {
-                Debug.Log("boosting");
-                frontDriverW.motorTorque = (lever.outAngle * motorForce * 3) * boostPower;
-                frontPassengerW.motorTorque = (lever.outAngle * motorForce * 3) * boostPower;
+                //Debug.Log("boosting");
+                frontDriverW.motorTorque = (lever.outAngle * motorForce) * motorMultiplier;
+                frontPassengerW.motorTorque = (lever.outAngle * motorForce) * motorMultiplier;
+                Debug.Log(isBoosting);
             }
         }
         else

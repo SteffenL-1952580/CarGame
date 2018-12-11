@@ -13,7 +13,7 @@ public class MaterialChange : MonoBehaviour
 	    //rend = gameObject.GetComponent<Renderer>();
 	    //rend.material.color = materials[2].color;
 	   
-        bodies[0].SetActive(true);
+        bodies[2].SetActive(true);
 	}
 	
 	// Update is called once per frame
